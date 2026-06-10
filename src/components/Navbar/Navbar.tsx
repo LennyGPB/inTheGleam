@@ -11,6 +11,10 @@ const itemNavbar = [
     link: "/",
   },
   {
+    text: "Projets",
+    link: "/projets",
+  },
+  {
     text: "E-Commerce",
     link: "/e-commerce",
   },
