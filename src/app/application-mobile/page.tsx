@@ -252,9 +252,16 @@ export default function ApplicationMobile() {
                       className={`w-full h-56 ${app.imageClass} transition-transform duration-500 group-hover:scale-110`}
                     />
                     <div className="absolute inset-0 bg-gradient-to-t from-blackGleam/70 to-transparent opacity-0 group-hover:opacity-100 transition-opacity duration-300"></div>
-                    <span className="absolute top-3 right-3 inline-flex items-center rounded-full bg-white/90 text-blackGleam text-[10px] font-semibold uppercase tracking-[.15em] px-2.5 py-1">
-                      Google Play
-                    </span>
+                    <div className="absolute top-3 right-3 flex gap-2">
+                      {["App Store", "Google Play"].map((store) => (
+                        <span
+                          key={store}
+                          className="inline-flex items-center rounded-full bg-white/90 text-blackGleam text-[10px] font-semibold uppercase tracking-[.15em] px-2.5 py-1"
+                        >
+                          {store}
+                        </span>
+                      ))}
+                    </div>
                   </div>
 
                   <div className="p-4 flex flex-col flex-1">
