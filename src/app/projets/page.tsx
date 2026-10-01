@@ -1,6 +1,7 @@
 import type { Metadata } from "next";
 import Image from "next/image";
 import Link from "next/link";
+import RevealOnScroll from "@/components/RevealOnScroll/RevealOnScroll";
 
 export const metadata: Metadata = {
   title: "Projets Internes | inTheGleam",
@@ -164,105 +165,113 @@ export default function ProjetsPage() {
           </div>
 
           <div className="grid md:grid-cols-2 lg:grid-cols-4 gap-8 max-w-7xl mx-auto">
-            <div className="group relative bg-white rounded-3xl p-8 shadow-lg hover:shadow-2xl transition-all duration-300 border-2 border-transparent hover:border-purple2/20">
-              <div className="w-16 h-16 bg-gradient-to-br from-purple2 to-purple-600 rounded-2xl flex items-center justify-center mb-6 group-hover:scale-110 transition-transform">
-                <svg
-                  className="w-8 h-8 text-white"
-                  fill="none"
-                  stroke="currentColor"
-                  viewBox="0 0 24 24"
-                >
-                  <path
-                    strokeLinecap="round"
-                    strokeLinejoin="round"
-                    strokeWidth={2}
-                    d="M12 6v6l4 2m6-2a10 10 0 11-20 0 10 10 0 0120 0z"
-                  />
-                </svg>
+            <RevealOnScroll className="h-full" delay={0}>
+              <div className="group relative h-full bg-white rounded-3xl p-8 shadow-lg hover:shadow-2xl transition-all duration-300 border-2 border-transparent hover:border-purple2/20">
+                <div className="w-16 h-16 bg-gradient-to-br from-purple2 to-purple-600 rounded-2xl flex items-center justify-center mb-6 group-hover:scale-110 transition-transform">
+                  <svg
+                    className="w-8 h-8 text-white"
+                    fill="none"
+                    stroke="currentColor"
+                    viewBox="0 0 24 24"
+                  >
+                    <path
+                      strokeLinecap="round"
+                      strokeLinejoin="round"
+                      strokeWidth={2}
+                      d="M12 6v6l4 2m6-2a10 10 0 11-20 0 10 10 0 0120 0z"
+                    />
+                  </svg>
+                </div>
+                <h3 className="text-2xl font-bold text-blackGleam mb-4 font-Gudea">
+                  Time-to-Market
+                </h3>
+                <p className="text-gray-600 leading-relaxed font-Gudea">
+                  Nous validons rapidement des idées et transformons les concepts
+                  en MVP exploitables en conditions réelles.
+                </p>
               </div>
-              <h3 className="text-2xl font-bold text-blackGleam mb-4 font-Gudea">
-                Time-to-Market
-              </h3>
-              <p className="text-gray-600 leading-relaxed font-Gudea">
-                Nous validons rapidement des idées et transformons les concepts
-                en MVP exploitables en conditions réelles.
-              </p>
-            </div>
+            </RevealOnScroll>
 
-            <div className="group relative bg-white rounded-3xl p-8 shadow-lg hover:shadow-2xl transition-all duration-300 border-2 border-transparent hover:border-purple2/20">
-              <div className="w-16 h-16 bg-gradient-to-br from-green-500 to-emerald-600 rounded-2xl flex items-center justify-center mb-6 group-hover:scale-110 transition-transform">
-                <svg
-                  className="w-8 h-8 text-white"
-                  fill="none"
-                  stroke="currentColor"
-                  viewBox="0 0 24 24"
-                >
-                  <path
-                    strokeLinecap="round"
-                    strokeLinejoin="round"
-                    strokeWidth={2}
-                    d="M9 12l2 2 4-4m5.618-4.016A11.955 11.955 0 0112 2.944a11.955 11.955 0 00-8.618 3.04A12.02 12.02 0 003 9c0 5.591 3.824 10.29 9 11.622 5.176-1.332 9-6.03 9-11.622 0-1.042-.133-2.052-.382-3.016z"
-                  />
-                </svg>
+            <RevealOnScroll className="h-full" delay={0.12}>
+              <div className="group relative h-full bg-white rounded-3xl p-8 shadow-lg hover:shadow-2xl transition-all duration-300 border-2 border-transparent hover:border-purple2/20">
+                <div className="w-16 h-16 bg-gradient-to-br from-green-500 to-emerald-600 rounded-2xl flex items-center justify-center mb-6 group-hover:scale-110 transition-transform">
+                  <svg
+                    className="w-8 h-8 text-white"
+                    fill="none"
+                    stroke="currentColor"
+                    viewBox="0 0 24 24"
+                  >
+                    <path
+                      strokeLinecap="round"
+                      strokeLinejoin="round"
+                      strokeWidth={2}
+                      d="M9 12l2 2 4-4m5.618-4.016A11.955 11.955 0 0112 2.944a11.955 11.955 0 00-8.618 3.04A12.02 12.02 0 003 9c0 5.591 3.824 10.29 9 11.622 5.176-1.332 9-6.03 9-11.622 0-1.042-.133-2.052-.382-3.016z"
+                    />
+                  </svg>
+                </div>
+                <h3 className="text-2xl font-bold text-blackGleam mb-4 font-Gudea">
+                  Qualité produit
+                </h3>
+                <p className="text-gray-600 leading-relaxed font-Gudea">
+                  Nos briques internes sont testées, sécurisées et réutilisées
+                  dans les projets clients pour gagner en robustesse.
+                </p>
               </div>
-              <h3 className="text-2xl font-bold text-blackGleam mb-4 font-Gudea">
-                Qualité produit
-              </h3>
-              <p className="text-gray-600 leading-relaxed font-Gudea">
-                Nos briques internes sont testées, sécurisées et réutilisées
-                dans les projets clients pour gagner en robustesse.
-              </p>
-            </div>
+            </RevealOnScroll>
 
-            <div className="group relative bg-white rounded-3xl p-8 shadow-lg hover:shadow-2xl transition-all duration-300 border-2 border-transparent hover:border-purple2/20">
-              <div className="w-16 h-16 bg-gradient-to-br from-blue-500 to-blue-600 rounded-2xl flex items-center justify-center mb-6 group-hover:scale-110 transition-transform">
-                <svg
-                  className="w-8 h-8 text-white"
-                  fill="none"
-                  stroke="currentColor"
-                  viewBox="0 0 24 24"
-                >
-                  <path
-                    strokeLinecap="round"
-                    strokeLinejoin="round"
-                    strokeWidth={2}
-                    d="M13 10V3L4 14h7v7l9-11h-7z"
-                  />
-                </svg>
+            <RevealOnScroll className="h-full" delay={0.24}>
+              <div className="group relative h-full bg-white rounded-3xl p-8 shadow-lg hover:shadow-2xl transition-all duration-300 border-2 border-transparent hover:border-purple2/20">
+                <div className="w-16 h-16 bg-gradient-to-br from-blue-500 to-blue-600 rounded-2xl flex items-center justify-center mb-6 group-hover:scale-110 transition-transform">
+                  <svg
+                    className="w-8 h-8 text-white"
+                    fill="none"
+                    stroke="currentColor"
+                    viewBox="0 0 24 24"
+                  >
+                    <path
+                      strokeLinecap="round"
+                      strokeLinejoin="round"
+                      strokeWidth={2}
+                      d="M13 10V3L4 14h7v7l9-11h-7z"
+                    />
+                  </svg>
+                </div>
+                <h3 className="text-2xl font-bold text-blackGleam mb-4 font-Gudea">
+                  Innovation continue
+                </h3>
+                <p className="text-gray-600 leading-relaxed font-Gudea">
+                  Nous explorons l&apos;IA, l&apos;automatisation et les nouveaux usages
+                  web pour garder une longueur d&apos;avance.
+                </p>
               </div>
-              <h3 className="text-2xl font-bold text-blackGleam mb-4 font-Gudea">
-                Innovation continue
-              </h3>
-              <p className="text-gray-600 leading-relaxed font-Gudea">
-                Nous explorons l&apos;IA, l&apos;automatisation et les nouveaux usages
-                web pour garder une longueur d&apos;avance.
-              </p>
-            </div>
+            </RevealOnScroll>
 
-            <div className="group relative bg-white rounded-3xl p-8 shadow-lg hover:shadow-2xl transition-all duration-300 border-2 border-transparent hover:border-purple2/20">
-              <div className="w-16 h-16 bg-gradient-to-br from-orange-500 to-red-500 rounded-2xl flex items-center justify-center mb-6 group-hover:scale-110 transition-transform">
-                <svg
-                  className="w-8 h-8 text-white"
-                  fill="none"
-                  stroke="currentColor"
-                  viewBox="0 0 24 24"
-                >
-                  <path
-                    strokeLinecap="round"
-                    strokeLinejoin="round"
-                    strokeWidth={2}
-                    d="M17 20h5V4H2v16h5m10 0v-2a4 4 0 00-4-4H9a4 4 0 00-4 4v2m12 0H7m6-10a4 4 0 11-8 0 4 4 0 018 0z"
-                  />
-                </svg>
+            <RevealOnScroll className="h-full" delay={0.36}>
+              <div className="group relative h-full bg-white rounded-3xl p-8 shadow-lg hover:shadow-2xl transition-all duration-300 border-2 border-transparent hover:border-purple2/20">
+                <div className="w-16 h-16 bg-gradient-to-br from-orange-500 to-red-500 rounded-2xl flex items-center justify-center mb-6 group-hover:scale-110 transition-transform">
+                  <svg
+                    className="w-8 h-8 text-white"
+                    fill="none"
+                    stroke="currentColor"
+                    viewBox="0 0 24 24"
+                  >
+                    <path
+                      strokeLinecap="round"
+                      strokeLinejoin="round"
+                      strokeWidth={2}
+                      d="M17 20h5V4H2v16h5m10 0v-2a4 4 0 00-4-4H9a4 4 0 00-4 4v2m12 0H7m6-10a4 4 0 11-8 0 4 4 0 018 0z"
+                    />
+                  </svg>
+                </div>
+                <h3 className="text-2xl font-bold text-blackGleam mb-4 font-Gudea">
+                  Impact équipe
+                </h3>
+                <p className="text-gray-600 leading-relaxed font-Gudea">
+                  Ces projets structurent nos process et améliorent la
+                  collaboration entre design, produit et développement.
+                </p>
               </div>
-              <h3 className="text-2xl font-bold text-blackGleam mb-4 font-Gudea">
-                Impact équipe
-              </h3>
-              <p className="text-gray-600 leading-relaxed font-Gudea">
-                Ces projets structurent nos process et améliorent la
-                collaboration entre design, produit et développement.
-              </p>
-            </div>
+            </RevealOnScroll>
           </div>
 
           <div className="mt-16 px-4 sm:px-8 lg:px-28 mx-auto">

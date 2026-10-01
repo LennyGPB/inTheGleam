@@ -1,5 +1,7 @@
 import React from "react";
 import type { Metadata } from "next";
+import ProjectForm from "@/components/ProjectForm/ProjectForm";
+import RevealOnScroll from "@/components/RevealOnScroll/RevealOnScroll";
 
 export const metadata: Metadata = {
   title: "Contactez-nous | inTheGleam - Experts en Développement Web",
@@ -15,6 +17,24 @@ export const metadata: Metadata = {
     "inTheGleam contact",
   ],
 };
+
+const highlights = [
+  {
+    title: "Réponse Rapide",
+    subtitle: "Moins de 24h",
+    icon: "M12 6v6h4.5m4.5 0a9 9 0 1 1-18 0 9 9 0 0 1 18 0Z",
+  },
+  {
+    title: "Conseils Gratuits",
+    subtitle: "Sans engagement",
+    icon: "M12 18v-5.25m0 0a6.01 6.01 0 0 0 1.5-.189m-1.5.189a6.01 6.01 0 0 1-1.5-.189m3.75 7.478a12.06 12.06 0 0 1-4.5 0m3.75 2.383a14.406 14.406 0 0 1-3 0M14.25 18v-.192c0-.983.658-1.823 1.508-2.316a7.5 7.5 0 1 0-7.517 0c.85.493 1.509 1.333 1.509 2.316V18",
+  },
+  {
+    title: "Équipe Dédiée",
+    subtitle: "Experts à l'écoute",
+    icon: "M18 18.72a9.094 9.094 0 0 0 3.741-.479 3 3 0 0 0-4.682-2.72m.94 3.198.001.031c0 .225-.012.447-.037.666A11.944 11.944 0 0 1 12 21c-2.17 0-4.207-.576-5.963-1.584A6.062 6.062 0 0 1 6 18.719m12 0a5.971 5.971 0 0 0-.941-3.197m0 0A5.995 5.995 0 0 0 12 12.75a5.995 5.995 0 0 0-5.058 2.772m0 0a3 3 0 0 0-4.681 2.72 8.986 8.986 0 0 0 3.74.477m.94-3.197a5.971 5.971 0 0 0-.94 3.197M15 6.75a3 3 0 1 1-6 0 3 3 0 0 1 6 0Zm6 3a2.25 2.25 0 1 1-4.5 0 2.25 2.25 0 0 1 4.5 0Zm-13.5 0a2.25 2.25 0 1 1-4.5 0 2.25 2.25 0 0 1 4.5 0Z",
+  },
+];
 
 export default function Contact() {
   return (
@@ -54,162 +74,45 @@ export default function Contact() {
               </p>
 
               {/* Statistiques/Avantages rapides */}
-              <div className="grid md:grid-cols-3 gap-4 max-w-2xl mx-auto mb-12">
-                <div className="rounded-xl p-5 border border-blackGleam/10 bg-blackGleam/5 hover:border-purple2/40 hover:bg-purple2/5 transition-all duration-300">
-                  <div className="w-10 h-10 bg-gradient-to-br from-purple2 to-purple-600 rounded-xl flex items-center justify-center mx-auto mb-3">
-                    <svg
-                      className="w-5 h-5 text-white"
-                      fill="none"
-                      stroke="currentColor"
-                      viewBox="0 0 24 24"
-                    >
-                      <path
-                        strokeLinecap="round"
-                        strokeLinejoin="round"
-                        strokeWidth={2}
-                        d="M12 8v4l3 3m6-3a9 9 0 11-18 0 9 9 0 0118 0z"
+              <div className="grid sm:grid-cols-3 gap-4 max-w-3xl mx-auto mb-12">
+                {highlights.map((item, index) => (
+                  <RevealOnScroll key={item.title} className="h-full" delay={index * 0.12}>
+                    <div className="group relative h-full overflow-hidden rounded-2xl p-6 bg-white border border-gray-100 shadow-md shadow-gray-200/60 hover:shadow-xl hover:shadow-purple2/15 hover:-translate-y-1 hover:border-purple2/20 transition-all duration-300">
+                      <div className="w-12 h-12 mx-auto mb-4 bg-gradient-to-br from-purple2 to-purple3 rounded-xl flex items-center justify-center shadow-lg shadow-purple2/30 group-hover:scale-110 group-hover:-rotate-3 transition-transform duration-300">
+                        <svg
+                          className="w-6 h-6 text-white"
+                          fill="none"
+                          stroke="currentColor"
+                          strokeWidth={1.5}
+                          viewBox="0 0 24 24"
+                          aria-hidden="true"
+                        >
+                          <path strokeLinecap="round" strokeLinejoin="round" d={item.icon} />
+                        </svg>
+                      </div>
+                      <h3 className="font-bold text-blackGleam mb-1 font-Gudea group-hover:text-purple2 transition-colors duration-300">
+                        {item.title}
+                      </h3>
+                      <p className="text-purple2/70 text-xs font-Gudea tracking-[.15em] uppercase">
+                        {item.subtitle}
+                      </p>
+                      <div
+                        aria-hidden="true"
+                        className="absolute bottom-0 left-0 right-0 h-1 bg-gradient-to-r from-purple2 to-purple3 scale-x-0 group-hover:scale-x-100 origin-left transition-transform duration-500"
                       />
-                    </svg>
-                  </div>
-                  <h3 className="font-bold text-blackGleam mb-1 font-Gudea text-sm">
-                    Réponse Rapide
-                  </h3>
-                  <p className="text-blackGleam/50 text-xs font-Gudea tracking-wide uppercase">
-                    Moins de 24h
-                  </p>
-                </div>
-
-                <div className="rounded-xl p-5 border border-blackGleam/10 bg-blackGleam/5 hover:border-purple2/40 hover:bg-purple2/5 transition-all duration-300">
-                  <div className="w-10 h-10 bg-gradient-to-br from-green-500 to-emerald-600 rounded-xl flex items-center justify-center mx-auto mb-3">
-                    <svg
-                      className="w-5 h-5 text-white"
-                      fill="none"
-                      stroke="currentColor"
-                      viewBox="0 0 24 24"
-                    >
-                      <path
-                        strokeLinecap="round"
-                        strokeLinejoin="round"
-                        strokeWidth={2}
-                        d="M9 12l2 2 4-4m6 2a9 9 0 11-18 0 9 9 0 0118 0z"
-                      />
-                    </svg>
-                  </div>
-                  <h3 className="font-bold text-blackGleam mb-1 font-Gudea text-sm">
-                    Conseils Gratuits
-                  </h3>
-                  <p className="text-blackGleam/50 text-xs font-Gudea tracking-wide uppercase">
-                    Sans engagement
-                  </p>
-                </div>
-
-                <div className="rounded-xl p-5 border border-blackGleam/10 bg-blackGleam/5 hover:border-purple2/40 hover:bg-purple2/5 transition-all duration-300">
-                  <div className="w-10 h-10 bg-gradient-to-br from-blue-500 to-blue-600 rounded-xl flex items-center justify-center mx-auto mb-3">
-                    <svg
-                      className="w-5 h-5 text-white"
-                      fill="none"
-                      stroke="currentColor"
-                      viewBox="0 0 24 24"
-                    >
-                      <path
-                        strokeLinecap="round"
-                        strokeLinejoin="round"
-                        strokeWidth={2}
-                        d="M17 20h5v-2a3 3 0 00-5.356-1.857M17 20H7m10 0v-2c0-.656-.126-1.283-.356-1.857M7 20H2v-2a3 3 0 015.356-1.857M7 20v-2c0-.656.126-1.283.356-1.857m0 0a5.002 5.002 0 019.288 0M15 7a3 3 0 11-6 0 3 3 0 016 0zm6 3a2 2 0 11-4 0 2 2 0 014 0zM7 10a2 2 0 11-4 0 2 2 0 014 0z"
-                      />
-                    </svg>
-                  </div>
-                  <h3 className="font-bold text-blackGleam mb-1 font-Gudea text-sm">
-                    Équipe Dédiée
-                  </h3>
-                  <p className="text-blackGleam/50 text-xs font-Gudea tracking-wide uppercase">
-                    Experts à l&apos;écoute
-                  </p>
-                </div>
+                    </div>
+                  </RevealOnScroll>
+                ))}
               </div>
             </div>
 
-            {/* Section informations de contact */}
-            <div className="max-w-4xl mx-auto">
-              <div className="space-y-8">
-                {/* Pourquoi nous choisir */}
-                <div className="bg-gradient-to-br from-purple2 to-purple3 rounded-3xl p-8 text-white">
-                  <h3 className="text-2xl font-bold mb-6 font-Gudea">
-                    Pourquoi nous choisir ?
-                  </h3>
-                  <div className="space-y-4">
-                    <div className="flex items-start space-x-3">
-                      <div className="w-6 h-6 bg-white/20 rounded-full flex items-center justify-center mt-1">
-                        <svg
-                          className="w-4 h-4"
-                          fill="currentColor"
-                          viewBox="0 0 20 20"
-                        >
-                          <path
-                            fillRule="evenodd"
-                            d="M16.707 5.293a1 1 0 010 1.414l-8 8a1 1 0 01-1.414 0l-4-4a1 1 0 011.414-1.414L8 12.586l7.293-7.293a1 1 0 011.414 0z"
-                            clipRule="evenodd"
-                          />
-                        </svg>
-                      </div>
-                      <div>
-                        <h4 className="font-semibold font-Gudea">
-                          Expertise technique
-                        </h4>
-                        <p className="text-white/80 text-sm font-Gudea">
-                          Technologies modernes et performantes
-                        </p>
-                      </div>
-                    </div>
-                    <div className="flex items-start space-x-3">
-                      <div className="w-6 h-6 bg-white/20 rounded-full flex items-center justify-center mt-1">
-                        <svg
-                          className="w-4 h-4"
-                          fill="currentColor"
-                          viewBox="0 0 20 20"
-                        >
-                          <path
-                            fillRule="evenodd"
-                            d="M16.707 5.293a1 1 0 010 1.414l-8 8a1 1 0 01-1.414 0l-4-4a1 1 0 011.414-1.414L8 12.586l7.293-7.293a1 1 0 011.414 0z"
-                            clipRule="evenodd"
-                          />
-                        </svg>
-                      </div>
-                      <div>
-                        <h4 className="font-semibold font-Gudea">
-                          Accompagnement personnalisé
-                        </h4>
-                        <p className="text-white/80 text-sm font-Gudea">
-                          Suivi de A à Z de votre projet
-                        </p>
-                      </div>
-                    </div>
-                    <div className="flex items-start space-x-3">
-                      <div className="w-6 h-6 bg-white/20 rounded-full flex items-center justify-center mt-1">
-                        <svg
-                          className="w-4 h-4"
-                          fill="currentColor"
-                          viewBox="0 0 20 20"
-                        >
-                          <path
-                            fillRule="evenodd"
-                            d="M16.707 5.293a1 1 0 010 1.414l-8 8a1 1 0 01-1.414 0l-4-4a1 1 0 011.414-1.414L8 12.586l7.293-7.293a1 1 0 011.414 0z"
-                            clipRule="evenodd"
-                          />
-                        </svg>
-                      </div>
-                      <div>
-                        <h4 className="font-semibold font-Gudea">
-                          Délais respectés
-                        </h4>
-                        <p className="text-white/80 text-sm font-Gudea">
-                          Livraison dans les temps convenus
-                        </p>
-                      </div>
-                    </div>
-                  </div>
-                </div>
+            {/* Formulaire puis informations de contact */}
+            <div className="max-w-4xl mx-auto space-y-8">
+              <div id="formulaire">
+                <ProjectForm />
+              </div>
 
+              <div className="space-y-8">
                 {/* Informations de contact */}
                 <div className="bg-white rounded-3xl p-8 shadow-lg border border-gray-100">
                   <h3 className="text-2xl font-bold text-blackGleam mb-6 font-Gudea">

@@ -3,6 +3,7 @@ import { Inter } from "next/font/google";
 import "./globals.css";
 import Navbar from "@/components/Navbar/Navbar";
 import Footer from "@/components/Footer";
+import QuoteButton from "@/components/QuoteButton/QuoteButton";
 import { Analytics } from "@vercel/analytics/react";
 import { SpeedInsights } from "@vercel/speed-insights/next";
 import { defaultMetadata } from "@/lib/seo-config";
@@ -95,6 +96,7 @@ export default function RootLayout({
           <Navbar />
         </div>
         {children}
+        <QuoteButton />
         <SpeedInsights />
         <div>
           <Footer />

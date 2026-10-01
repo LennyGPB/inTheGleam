@@ -2,6 +2,7 @@
 import type { Metadata } from "next";
 import Image from "next/image";
 import Link from "next/link";
+import RevealOnScroll from "@/components/RevealOnScroll/RevealOnScroll";
 
 export const metadata: Metadata = {
   title: "Création de Site E-Commerce Professionnel | inTheGleam",
@@ -145,115 +146,123 @@ export default function Ecommerce() {
 
           <div className="grid md:grid-cols-2 lg:grid-cols-4 gap-8 max-w-7xl mx-auto">
             {/* Design */}
-            <div className="group relative bg-white rounded-3xl p-8 shadow-lg hover:shadow-2xl transition-all duration-300 border-2 border-transparent hover:border-purple2/20">
-              <div className="w-16 h-16 bg-gradient-to-br from-purple2 to-purple-600 rounded-2xl flex items-center justify-center mb-6 group-hover:scale-110 transition-transform">
-                <svg
-                  className="w-8 h-8 text-white"
-                  fill="none"
-                  stroke="currentColor"
-                  viewBox="0 0 24 24"
-                >
-                  <path
-                    strokeLinecap="round"
-                    strokeLinejoin="round"
-                    strokeWidth={2}
-                    d="M7 21a4 4 0 01-4-4V5a2 2 0 012-2h4a2 2 0 012 2v12a4 4 0 01-4 4zM21 5a2 2 0 00-2-2h-4a2 2 0 00-2 2v6a2 2 0 002 2h4a2 2 0 002-2V5z"
-                  />
-                </svg>
+            <RevealOnScroll className="h-full" delay={0}>
+              <div className="group relative h-full bg-white rounded-3xl p-8 shadow-lg hover:shadow-2xl transition-all duration-300 border-2 border-transparent hover:border-purple2/20">
+                <div className="w-16 h-16 bg-gradient-to-br from-purple2 to-purple-600 rounded-2xl flex items-center justify-center mb-6 group-hover:scale-110 transition-transform">
+                  <svg
+                    className="w-8 h-8 text-white"
+                    fill="none"
+                    stroke="currentColor"
+                    viewBox="0 0 24 24"
+                  >
+                    <path
+                      strokeLinecap="round"
+                      strokeLinejoin="round"
+                      strokeWidth={2}
+                      d="M7 21a4 4 0 01-4-4V5a2 2 0 012-2h4a2 2 0 012 2v12a4 4 0 01-4 4zM21 5a2 2 0 00-2-2h-4a2 2 0 00-2 2v6a2 2 0 002 2h4a2 2 0 002-2V5z"
+                    />
+                  </svg>
+                </div>
+                <h3 className="text-2xl font-bold text-blackGleam mb-4 font-Gudea">
+                  Design Unique
+                </h3>
+                <p className="text-gray-600 leading-relaxed font-Gudea">
+                  Interface sur mesure qui reflète votre identité de marque et
+                  optimise l&apos;expérience utilisateur pour maximiser les
+                  conversions.
+                </p>
               </div>
-              <h3 className="text-2xl font-bold text-blackGleam mb-4 font-Gudea">
-                Design Unique
-              </h3>
-              <p className="text-gray-600 leading-relaxed font-Gudea">
-                Interface sur mesure qui reflète votre identité de marque et
-                optimise l&apos;expérience utilisateur pour maximiser les
-                conversions.
-              </p>
-            </div>
+            </RevealOnScroll>
 
             {/* Paiement Sécurisé */}
-            <div className="group relative bg-white rounded-3xl p-8 shadow-lg hover:shadow-2xl transition-all duration-300 border-2 border-transparent hover:border-purple2/20">
-              <div className="w-16 h-16 bg-gradient-to-br from-green-500 to-emerald-600 rounded-2xl flex items-center justify-center mb-6 group-hover:scale-110 transition-transform">
-                <svg
-                  className="w-8 h-8 text-white"
-                  fill="none"
-                  stroke="currentColor"
-                  viewBox="0 0 24 24"
-                >
-                  <path
-                    strokeLinecap="round"
-                    strokeLinejoin="round"
-                    strokeWidth={2}
-                    d="M12 15v2m-6 4h12a2 2 0 002-2v-6a2 2 0 00-2-2H6a2 2 0 00-2 2v6a2 2 0 002 2zm10-10V7a4 4 0 00-8 0v4h8z"
-                  />
-                </svg>
+            <RevealOnScroll className="h-full" delay={0.12}>
+              <div className="group relative h-full bg-white rounded-3xl p-8 shadow-lg hover:shadow-2xl transition-all duration-300 border-2 border-transparent hover:border-purple2/20">
+                <div className="w-16 h-16 bg-gradient-to-br from-green-500 to-emerald-600 rounded-2xl flex items-center justify-center mb-6 group-hover:scale-110 transition-transform">
+                  <svg
+                    className="w-8 h-8 text-white"
+                    fill="none"
+                    stroke="currentColor"
+                    viewBox="0 0 24 24"
+                  >
+                    <path
+                      strokeLinecap="round"
+                      strokeLinejoin="round"
+                      strokeWidth={2}
+                      d="M12 15v2m-6 4h12a2 2 0 002-2v-6a2 2 0 00-2-2H6a2 2 0 00-2 2v6a2 2 0 002 2zm10-10V7a4 4 0 00-8 0v4h8z"
+                    />
+                  </svg>
+                </div>
+                <h3 className="text-2xl font-bold text-blackGleam mb-4 font-Gudea">
+                  Paiement Sécurisé
+                </h3>
+                <p className="text-gray-600 leading-relaxed font-Gudea">
+                  Intégration des meilleures solutions de paiement (Stripe,
+                  PayPal, CB) avec chiffrement SSL et conformité PCI DSS.
+                </p>
               </div>
-              <h3 className="text-2xl font-bold text-blackGleam mb-4 font-Gudea">
-                Paiement Sécurisé
-              </h3>
-              <p className="text-gray-600 leading-relaxed font-Gudea">
-                Intégration des meilleures solutions de paiement (Stripe,
-                PayPal, CB) avec chiffrement SSL et conformité PCI DSS.
-              </p>
-            </div>
+            </RevealOnScroll>
 
             {/* Gestion Simple */}
-            <div className="group relative bg-white rounded-3xl p-8 shadow-lg hover:shadow-2xl transition-all duration-300 border-2 border-transparent hover:border-purple2/20">
-              <div className="w-16 h-16 bg-gradient-to-br from-blue-500 to-blue-600 rounded-2xl flex items-center justify-center mb-6 group-hover:scale-110 transition-transform">
-                <svg
-                  className="w-8 h-8 text-white"
-                  fill="none"
-                  stroke="currentColor"
-                  viewBox="0 0 24 24"
-                >
-                  <path
-                    strokeLinecap="round"
-                    strokeLinejoin="round"
-                    strokeWidth={2}
-                    d="M10.325 4.317c.426-1.756 2.924-1.756 3.35 0a1.724 1.724 0 002.573 1.066c1.543-.94 3.31.826 2.37 2.37a1.724 1.724 0 001.065 2.572c1.756.426 1.756 2.924 0 3.35a1.724 1.724 0 00-1.066 2.573c.94 1.543-.826 3.31-2.37 2.37a1.724 1.724 0 00-2.572 1.065c-.426 1.756-2.924 1.756-3.35 0a1.724 1.724 0 00-2.573-1.066c-1.543.94-3.31-.826-2.37-2.37a1.724 1.724 0 00-1.065-2.572c-1.756-.426-1.756-2.924 0-3.35a1.724 1.724 0 001.066-2.573c-.94-1.543.826-3.31 2.37-2.37.996.608 2.296.07 2.572-1.065z"
-                  />
-                  <path
-                    strokeLinecap="round"
-                    strokeLinejoin="round"
-                    strokeWidth={2}
-                    d="M15 12a3 3 0 11-6 0 3 3 0 016 0z"
-                  />
-                </svg>
+            <RevealOnScroll className="h-full" delay={0.24}>
+              <div className="group relative h-full bg-white rounded-3xl p-8 shadow-lg hover:shadow-2xl transition-all duration-300 border-2 border-transparent hover:border-purple2/20">
+                <div className="w-16 h-16 bg-gradient-to-br from-blue-500 to-blue-600 rounded-2xl flex items-center justify-center mb-6 group-hover:scale-110 transition-transform">
+                  <svg
+                    className="w-8 h-8 text-white"
+                    fill="none"
+                    stroke="currentColor"
+                    viewBox="0 0 24 24"
+                  >
+                    <path
+                      strokeLinecap="round"
+                      strokeLinejoin="round"
+                      strokeWidth={2}
+                      d="M10.325 4.317c.426-1.756 2.924-1.756 3.35 0a1.724 1.724 0 002.573 1.066c1.543-.94 3.31.826 2.37 2.37a1.724 1.724 0 001.065 2.572c1.756.426 1.756 2.924 0 3.35a1.724 1.724 0 00-1.066 2.573c.94 1.543-.826 3.31-2.37 2.37a1.724 1.724 0 00-2.572 1.065c-.426 1.756-2.924 1.756-3.35 0a1.724 1.724 0 00-2.573-1.066c-1.543.94-3.31-.826-2.37-2.37a1.724 1.724 0 00-1.065-2.572c-1.756-.426-1.756-2.924 0-3.35a1.724 1.724 0 001.066-2.573c-.94-1.543.826-3.31 2.37-2.37.996.608 2.296.07 2.572-1.065z"
+                    />
+                    <path
+                      strokeLinecap="round"
+                      strokeLinejoin="round"
+                      strokeWidth={2}
+                      d="M15 12a3 3 0 11-6 0 3 3 0 016 0z"
+                    />
+                  </svg>
+                </div>
+                <h3 className="text-2xl font-bold text-blackGleam mb-4 font-Gudea">
+                  Gestion Intuitive
+                </h3>
+                <p className="text-gray-600 leading-relaxed font-Gudea">
+                  Dashboard admin simple et puissant pour gérer produits,
+                  commandes, clients et statistiques en temps réel.
+                </p>
               </div>
-              <h3 className="text-2xl font-bold text-blackGleam mb-4 font-Gudea">
-                Gestion Intuitive
-              </h3>
-              <p className="text-gray-600 leading-relaxed font-Gudea">
-                Dashboard admin simple et puissant pour gérer produits,
-                commandes, clients et statistiques en temps réel.
-              </p>
-            </div>
+            </RevealOnScroll>
 
             {/* Multi-langue */}
-            <div className="group relative bg-white rounded-3xl p-8 shadow-lg hover:shadow-2xl transition-all duration-300 border-2 border-transparent hover:border-purple2/20">
-              <div className="w-16 h-16 bg-gradient-to-br from-orange-500 to-red-500 rounded-2xl flex items-center justify-center mb-6 group-hover:scale-110 transition-transform">
-                <svg
-                  className="w-8 h-8 text-white"
-                  fill="none"
-                  stroke="currentColor"
-                  viewBox="0 0 24 24"
-                >
-                  <path
-                    strokeLinecap="round"
-                    strokeLinejoin="round"
-                    strokeWidth={2}
-                    d="M3 5h12M9 3v2m1.048 9.5A18.022 18.022 0 016.412 9m6.088 9h7M11 21l5-10 5 10M12.751 5C11.783 10.77 8.07 15.61 3 18.129"
-                  />
-                </svg>
+            <RevealOnScroll className="h-full" delay={0.36}>
+              <div className="group relative h-full bg-white rounded-3xl p-8 shadow-lg hover:shadow-2xl transition-all duration-300 border-2 border-transparent hover:border-purple2/20">
+                <div className="w-16 h-16 bg-gradient-to-br from-orange-500 to-red-500 rounded-2xl flex items-center justify-center mb-6 group-hover:scale-110 transition-transform">
+                  <svg
+                    className="w-8 h-8 text-white"
+                    fill="none"
+                    stroke="currentColor"
+                    viewBox="0 0 24 24"
+                  >
+                    <path
+                      strokeLinecap="round"
+                      strokeLinejoin="round"
+                      strokeWidth={2}
+                      d="M3 5h12M9 3v2m1.048 9.5A18.022 18.022 0 016.412 9m6.088 9h7M11 21l5-10 5 10M12.751 5C11.783 10.77 8.07 15.61 3 18.129"
+                    />
+                  </svg>
+                </div>
+                <h3 className="text-2xl font-bold text-blackGleam mb-4 font-Gudea">
+                  International
+                </h3>
+                <p className="text-gray-600 leading-relaxed font-Gudea">
+                  Support multi-langues et multi-devises pour conquérir les
+                  marchés internationaux et multiplier votre clientèle.
+                </p>
               </div>
-              <h3 className="text-2xl font-bold text-blackGleam mb-4 font-Gudea">
-                International
-              </h3>
-              <p className="text-gray-600 leading-relaxed font-Gudea">
-                Support multi-langues et multi-devises pour conquérir les
-                marchés internationaux et multiplier votre clientèle.
-              </p>
-            </div>
+            </RevealOnScroll>
           </div>
 
           {/* Call to action modernisé */}

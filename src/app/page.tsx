@@ -41,7 +41,7 @@ export default function Home() {
       <section aria-label="Nos Services Web">
         <HomeSection2 />
       </section>
-      <section aria-label="Nos technologies" className=" mt-12 lg:mt-20">
+      <section aria-label="Le monde digital" className=" mt-12 lg:mt-20">
         <HomeSection3 />
       </section>
       <section aria-label="Nos avantages" className=" mt-12">

@@ -19,17 +19,21 @@ export default function HomeSection1() {
         </div>
         <div className="relative pt-[147px] lg:pt-[164px] text-white text-center flex flex-col gap-[1rem] md:gap-12 lg:gap-4 my-auto z-40">
           <h1 className="mt-16 sm:mt-[15rem] lg:mt-20 font-semibold text-center text-xl sm:text-4xl tracking-[.35em] uppercase title-section1">
-            <span className="w-gleam font-DissolveRegular mr-2 text-4xl sm:text-7xl">
-              W
-            </span>
-            eb design &{" "}
-            <span className="sm-hidden">
-              <span className="w-gleam font-DissolveRegular text-4xl sm:text-7xl">
+            <span className="hero-reveal inline-block [animation-delay:200ms]">
+              <span className="w-gleam font-DissolveRegular mr-2 text-4xl sm:text-7xl">
                 W
               </span>
-              eb
+              eb design &
             </span>{" "}
-            Développement
+            <span className="hero-reveal inline-block [animation-delay:1000ms]">
+              <span className="sm-hidden">
+                <span className="w-gleam font-DissolveRegular text-4xl sm:text-7xl">
+                  W
+                </span>
+                eb
+              </span>{" "}
+              Développement
+            </span>
           </h1>
           <p className="font-Gudea tracking-widest lg:p-0 text-xs md:px-4 sm:text-lg lg:text-xl max-w-[50em] mx-auto title-section1">
             Nous développons des solutions digitales sur-mesure en collaboration

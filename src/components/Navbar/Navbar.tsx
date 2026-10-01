@@ -23,6 +23,10 @@ const itemNavbar = [
     link: "/vitrine",
   },
   {
+    text: "App Mobile",
+    link: "/application-mobile",
+  },
+  {
     text: "À Propos",
     link: "/a-propos",
   },
@@ -118,7 +122,7 @@ export default function Navbar() {
         </div>
 
         <div
-          className={`fixed left-0 flex w-full flex-col items-center justify-center gap-20 bg-[#080808f3] px-4 py-6 transition-all duration-500 ease-in-out [font-family:'Gudea-Regular'] max-[800px]:h-screen min-[801px]:static min-[801px]:ml-auto min-[801px]:h-auto min-[801px]:w-auto min-[801px]:flex-row min-[801px]:items-center min-[801px]:gap-20 min-[801px]:bg-transparent min-[801px]:px-0 min-[801px]:py-0 min-[801px]:pt-0 min-[801px]:text-[1.2rem] min-[801px]:leading-7 ${
+          className={`fixed left-0 flex w-full flex-col items-center justify-center gap-12 bg-[#080808f3] px-4 py-6 transition-all duration-500 ease-in-out [font-family:'Gudea-Regular'] max-[800px]:h-screen min-[801px]:static min-[801px]:ml-auto min-[801px]:h-auto min-[801px]:w-auto min-[801px]:flex-row min-[801px]:items-center min-[801px]:gap-10 xl:gap-16 min-[801px]:bg-transparent min-[801px]:px-0 min-[801px]:py-0 min-[801px]:pt-0 min-[801px]:text-[1.2rem] min-[801px]:leading-7 ${
             navActive
               ? "top-0 z-[9] opacity-100"
               : "-top-[100vh] z-[-1] opacity-0 min-[801px]:top-0 min-[801px]:z-auto min-[801px]:opacity-100"

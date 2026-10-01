@@ -55,24 +55,25 @@ export default function Propos() {
 
             <div className="bg-white/80 backdrop-blur-sm rounded-3xl p-8 lg:p-12 border border-purple2/20 max-w-5xl mx-auto text-left mb-10">
               <p className="text-lg text-gray-700 leading-relaxed font-Gudea">
-                En tant que deux frères{" "}
-                <span className="font-semibold text-purple2">développeurs web passionnés</span>,
-                nous unissons nos forces et nos spécialités pour concrétiser
-                vos projets avec créativité et expertise.
+                Deux frères,{" "}
+                <span className="font-semibold text-purple2">développeurs web et mobile passionnés</span>,
+                qui unissent leurs forces et leurs spécialités pour donner vie
+                à vos projets avec créativité et exigence.
                 <br />
                 <br />
                 <span className="font-semibold text-purple2">L'un</span> se
-                concentre sur le Front-End pour créer des interfaces modernes et
-                intuitives, tandis que{" "}
-                <span className="font-semibold text-purple2">l'autre</span>{" "}
-                optimise le Back-End pour assurer la performance et la sécurité
-                de vos solutions web.
+                consacre au Front-End et conçoit des interfaces modernes,
+                fluides et intuitives. <span className="font-semibold text-purple2">L'autre</span>{" "}
+                maîtrise le Back-End et garantit la performance, la fiabilité
+                et la sécurité de vos solutions.
                 <br />
                 <br />
-                Ensemble, nous transformons vos idées en solutions web uniques,
-                en offrant une{" "}
+                Sites vitrines, e-commerce, plateformes sur-mesure ou{" "}
+                <span className="font-semibold text-purple2">applications mobiles iOS et Android</span> :
+                ensemble, nous transformons vos idées en produits digitaux
+                uniques, pensés pour offrir une{" "}
                 <span className="font-semibold text-purple2">expérience immersive</span>{" "}
-                qui reflète vos ambitions.
+                à la hauteur de vos ambitions.
               </p>
             </div>
 

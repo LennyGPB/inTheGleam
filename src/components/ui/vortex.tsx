@@ -3,9 +3,22 @@ import React from "react";
 import { useEffect, useState } from "react";
 import Particles, { initParticlesEngine } from "@tsparticles/react";
 import type { Container, SingleOrMultiple } from "@tsparticles/engine";
-import { loadSlim } from "@tsparticles/slim";
 import { cn } from "../utils/cn";
 import { motion, useAnimation } from "framer-motion";
+
+// Moteur initialisé une seule fois, partagé par toutes les instances
+// (hero, navbar, footer). Le bundle @tsparticles/slim est chargé à la demande
+// pour ne pas alourdir le JavaScript initial de la page.
+let enginePromise: Promise<void> | null = null;
+const initEngine = () => {
+  if (!enginePromise) {
+    enginePromise = initParticlesEngine(async (engine) => {
+      const { loadSlim } = await import("@tsparticles/slim");
+      await loadSlim(engine);
+    });
+  }
+  return enginePromise;
+};
 
 type ParticlesProps = {
   id?: string;
@@ -30,10 +43,9 @@ export const SparklesCore = (props: ParticlesProps) => {
     particleDensity,
   } = props;
   const [init, setInit] = useState(false);
+  const [loaded, setLoaded] = useState(false);
   useEffect(() => {
-    initParticlesEngine(async (engine) => {
-      await loadSlim(engine);
-    }).then(() => {
+    initEngine().then(() => {
       setInit(true);
     });
   }, []);
@@ -41,24 +53,35 @@ export const SparklesCore = (props: ParticlesProps) => {
 
   const particlesLoaded = async (container?: Container) => {
     if (container) {
-      console.log(container);
+      setLoaded(true);
       controls.start({
         opacity: 1,
         transition: {
-          duration: 1,
+          duration: 0.3,
         },
       });
     }
   };
 
   return (
-    <motion.div animate={controls} className={cn("opacity-0", className)}>
+    <div className={cn("relative", className)}>
+      {/* Ciel étoilé CSS affiché immédiatement, en attendant les particules */}
+      <div
+        aria-hidden="true"
+        className={cn(
+          "stars-fallback absolute inset-0 transition-opacity duration-300",
+          loaded ? "opacity-0" : "opacity-100"
+        )}
+      />
+      <motion.div animate={controls} className="absolute inset-0 opacity-0">
       {init && (
         <Particles
           id={id || "tsparticles"}
           className={cn("h-full w-full")}
           particlesLoaded={particlesLoaded}
           options={{
+            pauseOnBlur: true,
+            pauseOnOutsideViewport: true,
             background: {
               color: {
                 value: background || "#0d47a1",
@@ -69,7 +92,7 @@ export const SparklesCore = (props: ParticlesProps) => {
               zIndex: 1,
             },
 
-            fpsLimit: 120,
+            fpsLimit: 60,
             interactivity: {
               events: {
                 onClick: {
@@ -223,8 +246,8 @@ export const SparklesCore = (props: ParticlesProps) => {
               number: {
                 density: {
                   enable: true,
-                  width: 400,
-                  height: 400,
+                  width: 600,
+                  height: 600,
                 },
                 limit: {
                   mode: "delete",
@@ -429,6 +452,7 @@ export const SparklesCore = (props: ParticlesProps) => {
           }}
         />
       )}
-    </motion.div>
+      </motion.div>
+    </div>
   );
 };

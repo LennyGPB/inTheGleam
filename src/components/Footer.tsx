@@ -60,6 +60,9 @@ export default function Footer() {
             <Link href="/e-commerce" className="text-sm text-white/70 hover:text-[#b080dd] transition-colors font-Gudea">
               Site E-Commerce
             </Link>
+            <Link href="/application-mobile" className="text-sm text-white/70 hover:text-[#b080dd] transition-colors font-Gudea">
+              Application Mobile
+            </Link>
           </div>
 
           {/* Colonne 4 — Légal */}

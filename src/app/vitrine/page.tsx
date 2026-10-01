@@ -3,6 +3,7 @@ import React from "react";
 import type { Metadata } from "next";
 import Image from "next/image";
 import Link from "next/link";
+import RevealOnScroll from "@/components/RevealOnScroll/RevealOnScroll";
 
 export const metadata: Metadata = {
   title: "Création de Site Vitrine Professionnel | inTheGleam",
@@ -131,112 +132,120 @@ export default function Vitrine() {
 
           <div className="grid md:grid-cols-2 lg:grid-cols-4 gap-8 max-w-7xl mx-auto">
             {/* Design */}
-            <div className="group relative bg-white rounded-3xl p-8 shadow-lg hover:shadow-2xl transition-all duration-300 border-2 border-transparent hover:border-purple2/20">
-              <div className="w-16 h-16 bg-gradient-to-br from-purple2 to-purple-600 rounded-2xl flex items-center justify-center mb-6 group-hover:scale-110 transition-transform">
-                <svg
-                  className="w-8 h-8 text-white"
-                  fill="none"
-                  stroke="currentColor"
-                  viewBox="0 0 24 24"
-                >
-                  <path
-                    strokeLinecap="round"
-                    strokeLinejoin="round"
-                    strokeWidth={2}
-                    d="M7 21a4 4 0 01-4-4V5a2 2 0 012-2h4a2 2 0 012 2v12a4 4 0 01-4 4zM21 5a2 2 0 00-2-2h-4a2 2 0 00-2 2v6a2 2 0 002 2h4a2 2 0 002-2V5z"
-                  />
-                </svg>
+            <RevealOnScroll className="h-full" delay={0}>
+              <div className="group relative h-full bg-white rounded-3xl p-8 shadow-lg hover:shadow-2xl transition-all duration-300 border-2 border-transparent hover:border-purple2/20">
+                <div className="w-16 h-16 bg-gradient-to-br from-purple2 to-purple-600 rounded-2xl flex items-center justify-center mb-6 group-hover:scale-110 transition-transform">
+                  <svg
+                    className="w-8 h-8 text-white"
+                    fill="none"
+                    stroke="currentColor"
+                    viewBox="0 0 24 24"
+                  >
+                    <path
+                      strokeLinecap="round"
+                      strokeLinejoin="round"
+                      strokeWidth={2}
+                      d="M7 21a4 4 0 01-4-4V5a2 2 0 012-2h4a2 2 0 012 2v12a4 4 0 01-4 4zM21 5a2 2 0 00-2-2h-4a2 2 0 00-2 2v6a2 2 0 002 2h4a2 2 0 002-2V5z"
+                    />
+                  </svg>
+                </div>
+                <h3 className="text-2xl font-bold text-blackGleam mb-4 font-Gudea">
+                  Design Unique
+                </h3>
+                <p className="text-gray-600 leading-relaxed font-Gudea">
+                  Votre site vitrine reflète votre identité visuelle et vos
+                  valeurs. Nous concevons des designs personnalisés pour renforcer
+                  votre image de marque.
+                </p>
               </div>
-              <h3 className="text-2xl font-bold text-blackGleam mb-4 font-Gudea">
-                Design Unique
-              </h3>
-              <p className="text-gray-600 leading-relaxed font-Gudea">
-                Votre site vitrine reflète votre identité visuelle et vos
-                valeurs. Nous concevons des designs personnalisés pour renforcer
-                votre image de marque.
-              </p>
-            </div>
+            </RevealOnScroll>
 
             {/* Simplicité */}
-            <div className="group relative bg-white rounded-3xl p-8 shadow-lg hover:shadow-2xl transition-all duration-300 border-2 border-transparent hover:border-purple2/20">
-              <div className="w-16 h-16 bg-gradient-to-br from-green-500 to-emerald-600 rounded-2xl flex items-center justify-center mb-6 group-hover:scale-110 transition-transform">
-                <svg
-                  className="w-8 h-8 text-white"
-                  fill="none"
-                  stroke="currentColor"
-                  viewBox="0 0 24 24"
-                >
-                  <path
-                    strokeLinecap="round"
-                    strokeLinejoin="round"
-                    strokeWidth={2}
-                    d="M9 12l2 2 4-4m6 2a9 9 0 11-18 0 9 9 0 0118 0z"
-                  />
-                </svg>
+            <RevealOnScroll className="h-full" delay={0.12}>
+              <div className="group relative h-full bg-white rounded-3xl p-8 shadow-lg hover:shadow-2xl transition-all duration-300 border-2 border-transparent hover:border-purple2/20">
+                <div className="w-16 h-16 bg-gradient-to-br from-green-500 to-emerald-600 rounded-2xl flex items-center justify-center mb-6 group-hover:scale-110 transition-transform">
+                  <svg
+                    className="w-8 h-8 text-white"
+                    fill="none"
+                    stroke="currentColor"
+                    viewBox="0 0 24 24"
+                  >
+                    <path
+                      strokeLinecap="round"
+                      strokeLinejoin="round"
+                      strokeWidth={2}
+                      d="M9 12l2 2 4-4m6 2a9 9 0 11-18 0 9 9 0 0118 0z"
+                    />
+                  </svg>
+                </div>
+                <h3 className="text-2xl font-bold text-blackGleam mb-4 font-Gudea">
+                  Navigation Intuitive
+                </h3>
+                <p className="text-gray-600 leading-relaxed font-Gudea">
+                  Sites vitrine intuitifs où vos visiteurs trouvent rapidement les
+                  informations recherchées. Navigation claire et optimisée pour
+                  une expérience utilisateur de qualité.
+                </p>
               </div>
-              <h3 className="text-2xl font-bold text-blackGleam mb-4 font-Gudea">
-                Navigation Intuitive
-              </h3>
-              <p className="text-gray-600 leading-relaxed font-Gudea">
-                Sites vitrine intuitifs où vos visiteurs trouvent rapidement les
-                informations recherchées. Navigation claire et optimisée pour
-                une expérience utilisateur de qualité.
-              </p>
-            </div>
+            </RevealOnScroll>
 
             {/* Compatibilité */}
-            <div className="group relative bg-white rounded-3xl p-8 shadow-lg hover:shadow-2xl transition-all duration-300 border-2 border-transparent hover:border-purple2/20">
-              <div className="w-16 h-16 bg-gradient-to-br from-blue-500 to-blue-600 rounded-2xl flex items-center justify-center mb-6 group-hover:scale-110 transition-transform">
-                <svg
-                  className="w-8 h-8 text-white"
-                  fill="none"
-                  stroke="currentColor"
-                  viewBox="0 0 24 24"
-                >
-                  <path
-                    strokeLinecap="round"
-                    strokeLinejoin="round"
-                    strokeWidth={2}
-                    d="M12 18h.01M8 21h8a2 2 0 002-2V5a2 2 0 00-2-2H8a2 2 0 00-2 2v14a2 2 0 002 2z"
-                  />
-                </svg>
+            <RevealOnScroll className="h-full" delay={0.24}>
+              <div className="group relative h-full bg-white rounded-3xl p-8 shadow-lg hover:shadow-2xl transition-all duration-300 border-2 border-transparent hover:border-purple2/20">
+                <div className="w-16 h-16 bg-gradient-to-br from-blue-500 to-blue-600 rounded-2xl flex items-center justify-center mb-6 group-hover:scale-110 transition-transform">
+                  <svg
+                    className="w-8 h-8 text-white"
+                    fill="none"
+                    stroke="currentColor"
+                    viewBox="0 0 24 24"
+                  >
+                    <path
+                      strokeLinecap="round"
+                      strokeLinejoin="round"
+                      strokeWidth={2}
+                      d="M12 18h.01M8 21h8a2 2 0 002-2V5a2 2 0 00-2-2H8a2 2 0 00-2 2v14a2 2 0 002 2z"
+                    />
+                  </svg>
+                </div>
+                <h3 className="text-2xl font-bold text-blackGleam mb-4 font-Gudea">
+                  Responsive Design
+                </h3>
+                <p className="text-gray-600 leading-relaxed font-Gudea">
+                  Sites entièrement responsives garantissant une accessibilité
+                  optimale sur ordinateurs, tablettes et mobiles. Adaptabilité
+                  parfaite sur tous les écrans.
+                </p>
               </div>
-              <h3 className="text-2xl font-bold text-blackGleam mb-4 font-Gudea">
-                Responsive Design
-              </h3>
-              <p className="text-gray-600 leading-relaxed font-Gudea">
-                Sites entièrement responsives garantissant une accessibilité
-                optimale sur ordinateurs, tablettes et mobiles. Adaptabilité
-                parfaite sur tous les écrans.
-              </p>
-            </div>
+            </RevealOnScroll>
 
             {/* Rapidité */}
-            <div className="group relative bg-white rounded-3xl p-8 shadow-lg hover:shadow-2xl transition-all duration-300 border-2 border-transparent hover:border-purple2/20">
-              <div className="w-16 h-16 bg-gradient-to-br from-orange-500 to-red-500 rounded-2xl flex items-center justify-center mb-6 group-hover:scale-110 transition-transform">
-                <svg
-                  className="w-8 h-8 text-white"
-                  fill="none"
-                  stroke="currentColor"
-                  viewBox="0 0 24 24"
-                >
-                  <path
-                    strokeLinecap="round"
-                    strokeLinejoin="round"
-                    strokeWidth={2}
-                    d="M13 10V3L4 14h7v7l9-11h-7z"
-                  />
-                </svg>
+            <RevealOnScroll className="h-full" delay={0.36}>
+              <div className="group relative h-full bg-white rounded-3xl p-8 shadow-lg hover:shadow-2xl transition-all duration-300 border-2 border-transparent hover:border-purple2/20">
+                <div className="w-16 h-16 bg-gradient-to-br from-orange-500 to-red-500 rounded-2xl flex items-center justify-center mb-6 group-hover:scale-110 transition-transform">
+                  <svg
+                    className="w-8 h-8 text-white"
+                    fill="none"
+                    stroke="currentColor"
+                    viewBox="0 0 24 24"
+                  >
+                    <path
+                      strokeLinecap="round"
+                      strokeLinejoin="round"
+                      strokeWidth={2}
+                      d="M13 10V3L4 14h7v7l9-11h-7z"
+                    />
+                  </svg>
+                </div>
+                <h3 className="text-2xl font-bold text-blackGleam mb-4 font-Gudea">
+                  Performance Optimisée
+                </h3>
+                <p className="text-gray-600 leading-relaxed font-Gudea">
+                  Sites vitrines rapides et performants. Vitesse de chargement
+                  optimisée qui améliore l'expérience utilisateur et renforce
+                  votre référencement SEO.
+                </p>
               </div>
-              <h3 className="text-2xl font-bold text-blackGleam mb-4 font-Gudea">
-                Performance Optimisée
-              </h3>
-              <p className="text-gray-600 leading-relaxed font-Gudea">
-                Sites vitrines rapides et performants. Vitesse de chargement
-                optimisée qui améliore l'expérience utilisateur et renforce
-                votre référencement SEO.
-              </p>
-            </div>
+            </RevealOnScroll>
           </div>
 
           {/* Call to action modernisé */}
