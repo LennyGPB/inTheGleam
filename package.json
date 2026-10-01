@@ -2,6 +2,9 @@
   "name": "inthegleam_website",
   "version": "0.1.0",
   "private": true,
+  "engines": {
+    "node": "24.x"
+  },
   "scripts": {
     "dev": "next dev --webpack",
     "dev:turbo": "next dev --turbopack",
@@ -28,7 +31,7 @@
     "tailwind-merge": "^2.3.0"
   },
   "devDependencies": {
-    "@types/node": "^20",
+    "@types/node": "^24",
     "@types/react": "^19.2.14",
     "@types/react-dom": "^19.2.3",
     "eslint": "^9.39.4",
