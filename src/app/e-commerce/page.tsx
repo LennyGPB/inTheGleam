@@ -306,7 +306,7 @@ export default function Ecommerce() {
             </p>
           </div>
 
-          <div className="grid md:grid-cols-2 gap-5 max-w-4xl mx-auto">
+          <div className="grid gap-5 max-w-md mx-auto">
             {/* Belle Nippe */}
             <div className="group bg-white rounded-xl shadow-md hover:shadow-xl transition-all duration-300 overflow-hidden border border-gray-100 flex flex-col">
               <div className="relative overflow-hidden">
@@ -334,52 +334,6 @@ export default function Ecommerce() {
                   target="_blank"
                   href={"https://www.bellenippe.fr/"}
                   className="inline-flex items-center justify-center w-full bg-gradient-to-r from-purple2 to-purple3 text-white text-sm font-semibold py-2 px-4 rounded-lg hover:from-purple-600 hover:to-purple-700 transition-all duration-300 transform hover:scale-105 hover:shadow-lg font-Gudea"
-                >
-                  <span>Visiter le site</span>
-                  <svg
-                    className="ml-2 w-3.5 h-3.5"
-                    fill="none"
-                    stroke="currentColor"
-                    viewBox="0 0 24 24"
-                  >
-                    <path
-                      strokeLinecap="round"
-                      strokeLinejoin="round"
-                      strokeWidth={2}
-                      d="M10 6H6a2 2 0 00-2 2v10a2 2 0 002 2h10a2 2 0 002-2v-4M14 4h6m0 0v6m0-6L10 14"
-                    />
-                  </svg>
-                </Link>
-              </div>
-            </div>
-
-            {/* Téléphone du Monde */}
-            <div className="group bg-white rounded-xl shadow-md hover:shadow-xl transition-all duration-300 overflow-hidden border border-gray-100 flex flex-col">
-              <div className="relative overflow-hidden">
-                <Image
-                  src={"/images/phonedumonde.png"}
-                  width={600}
-                  height={400}
-                  alt="Téléphone du Monde - Boutique de téléphonie"
-                  className="w-full h-44 object-cover transition-transform duration-500 group-hover:scale-110"
-                />
-                <div className="absolute inset-0 bg-gradient-to-t from-blackGleam/70 to-transparent opacity-0 group-hover:opacity-100 transition-opacity duration-300"></div>
-              </div>
-
-              <div className="p-4 flex flex-col flex-1">
-                <h3 className="text-base font-bold text-blackGleam mb-1.5 font-Gudea">
-                  Téléphone du Monde
-                </h3>
-                <p className="text-gray-600 text-sm mb-3 leading-relaxed font-Gudea flex-1">
-                  Plateforme e-commerce spécialisée dans la vente de smartphones
-                  et accessoires, avec système de comparaison avancé et support
-                  client intégré.
-                </p>
-
-                <Link
-                  target="_blank"
-                  href={"https://www.telephonedumonde.com/"}
-                  className="inline-flex items-center justify-center w-full bg-gradient-to-r from-purple2 to-purple3 text-white text-sm font-semibold py-2 px-4 rounded-lg hover:from-blue-700 hover:to-blue-800 transition-all duration-300 transform hover:scale-105 hover:shadow-lg font-Gudea"
                 >
                   <span>Visiter le site</span>
                   <svg
