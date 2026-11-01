@@ -2,12 +2,13 @@ import HomeSection1 from "@/components/HomeSection1";
 import HomeSection2 from "@/components/HomeSection2";
 import HomeSection3 from "@/components/HomeSection3";
 import HomeSection4 from "@/components/HomeSection4";
+import Offers from "@/components/Offers/Offers";
 import type { Metadata } from "next";
 
 export const metadata: Metadata = {
-  title: "inTheGleam - Agence Web et Mobile | Développement Sur-Mesure",
+  title: "inTheGleam - Sites, Apps & Motion Design | Faites briller votre marque",
   description:
-    "inTheGleam, votre agence spécialisée en développement web et mobile. Création de sites vitrines, e-commerce, applications webs, et bien plus. Découvrez nos services et technologies.",
+    "inTheGleam crée vos sites web, applications mobiles et motion designs pour les réseaux sociaux. Abonnements motion dès 290 €/mois et packs lancement site + vidéo promo.",
   keywords: [
     "agence web",
     "développement mobile",
@@ -15,12 +16,15 @@ export const metadata: Metadata = {
     "site e-commerce",
     "développement sur-mesure",
     "applications web",
+    "motion design",
+    "vidéo réseaux sociaux",
+    "logo animé",
     "services web professionnels",
   ],
   openGraph: {
-    title: "inTheGleam - Agence Web et Mobile | Développement Sur-Mesure",
+    title: "inTheGleam - Sites, Apps & Motion Design | Faites briller votre marque",
     description:
-      "inTheGleam, votre agence spécialisée en développement web et mobile. Création de sites vitrines, e-commerce, applications webs, et bien plus. Découvrez nos services et technologies.",
+      "inTheGleam crée vos sites web, applications mobiles et motion designs pour les réseaux sociaux. Abonnements motion dès 290 €/mois et packs lancement site + vidéo promo.",
     url: "https://www.inthegleam.com",
     type: "website",
     images: [
@@ -41,11 +45,14 @@ export default function Home() {
       <section aria-label="Nos Services Web">
         <HomeSection2 />
       </section>
-      <section aria-label="Le monde digital" className=" mt-12 lg:mt-20">
-        <HomeSection3 />
+      <section aria-label="Nos offres">
+        <Offers />
       </section>
-      <section aria-label="Nos avantages" className=" mt-12">
+      <section aria-label="Nos avantages">
         <HomeSection4 />
+      </section>
+      <section aria-label="Le monde digital">
+        <HomeSection3 />
       </section>
     </main>
   );

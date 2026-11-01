@@ -1,7 +1,10 @@
 "use client";
 import React, { useState } from "react";
+import { useSearchParams } from "next/navigation";
+import { offerGroups, offerLabels } from "@/lib/offers";
 
 const PROJECT_TYPES = [
+  "Motion design / Réseaux sociaux",
   "Site vitrine",
   "Site e-commerce",
   "Application mobile",
@@ -20,6 +23,9 @@ const labelClass = "block mb-2 text-sm font-semibold text-blackGleam font-Gudea"
 export default function ProjectForm() {
   const [status, setStatus] = useState<Status>("idle");
   const [error, setError] = useState("");
+  const searchParams = useSearchParams();
+  const offerParam = searchParams.get("offre") ?? "";
+  const defaultOffer = Object.hasOwn(offerLabels, offerParam) ? offerParam : "";
 
   const handleSubmit = async (e: React.FormEvent<HTMLFormElement>) => {
     e.preventDefault();
@@ -157,6 +163,31 @@ export default function ProjectForm() {
               <option key={type} value={type}>
                 {type}
               </option>
+            ))}
+          </select>
+        </div>
+
+        <div className="sm:col-span-2">
+          <label htmlFor="offer" className={labelClass}>
+            Offre qui vous intéresse{" "}
+            <span className="font-normal text-gray-400">(facultatif)</span>
+          </label>
+          <select
+            key={defaultOffer}
+            id="offer"
+            name="offer"
+            defaultValue={defaultOffer}
+            className={inputClass}
+          >
+            <option value="">Je ne sais pas encore</option>
+            {offerGroups.map((group) => (
+              <optgroup key={group.label} label={group.label}>
+                {group.options.map((o) => (
+                  <option key={o.slug} value={o.slug}>
+                    {o.label}
+                  </option>
+                ))}
+              </optgroup>
             ))}
           </select>
         </div>

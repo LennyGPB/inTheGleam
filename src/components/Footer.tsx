@@ -20,6 +20,16 @@ export default function Footer() {
       />
 
       <div className="relative z-10 w-full px-8 lg:px-48 pt-16 pb-8 flex flex-col flex-1 justify-end">
+        {/* Marque incrustée dans l'espace libre du footer */}
+        <div
+          aria-hidden="true"
+          className="-mx-8 lg:-mx-48 flex flex-1 items-center justify-center overflow-hidden pb-12 select-none"
+        >
+          <span className="footer-watermark whitespace-nowrap font-black leading-[0.8] tracking-[-0.065em] text-[18.5vw]">
+            inTheGleam
+          </span>
+        </div>
+
         {/* Grille principale */}
         <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-[1.3fr_0.8fr_0.9fr_0.9fr_1fr] gap-12 mb-12 items-end">
 
@@ -43,7 +53,7 @@ export default function Footer() {
             <Link href="/" className="text-sm text-white/70 hover:text-[#b080dd] transition-colors font-Gudea">
               Accueil
             </Link>
-            <Link href="/a-propos" className="text-sm text-white/70 hover:text-[#b080dd] transition-colors font-Gudea">
+            <Link href="/#atouts" className="text-sm text-white/70 hover:text-[#b080dd] transition-colors font-Gudea">
               À propos
             </Link>
           
@@ -54,11 +64,11 @@ export default function Footer() {
             <h3 className="text-white text-xs font-Gudea tracking-[.3em] uppercase mb-2">
               Services
             </h3>
-            <Link href="/vitrine" className="text-sm text-white/70 hover:text-[#b080dd] transition-colors font-Gudea">
-              Site Vitrine
+            <Link href="/#offres" className="text-sm text-white/70 hover:text-[#b080dd] transition-colors font-Gudea">
+              Nos offres
             </Link>
-            <Link href="/e-commerce" className="text-sm text-white/70 hover:text-[#b080dd] transition-colors font-Gudea">
-              Site E-Commerce
+            <Link href="/projets" className="text-sm text-white/70 hover:text-[#b080dd] transition-colors font-Gudea">
+              Nos projets
             </Link>
             <Link href="/application-mobile" className="text-sm text-white/70 hover:text-[#b080dd] transition-colors font-Gudea">
               Application Mobile

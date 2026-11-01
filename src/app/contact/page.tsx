@@ -1,5 +1,6 @@
-import React from "react";
+import React, { Suspense } from "react";
 import type { Metadata } from "next";
+import Link from "next/link";
 import ProjectForm from "@/components/ProjectForm/ProjectForm";
 import RevealOnScroll from "@/components/RevealOnScroll/RevealOnScroll";
 
@@ -111,7 +112,9 @@ export default function Contact() {
               id="formulaire"
               className="order-2 sm:order-3 w-full max-w-4xl mx-auto"
             >
-              <ProjectForm />
+              <Suspense>
+                <ProjectForm />
+              </Suspense>
             </div>
 
             <div className="order-4 w-full max-w-4xl mx-auto space-y-8 mt-8">
@@ -212,42 +215,25 @@ export default function Contact() {
                 <div className="relative z-10 flex flex-col sm:flex-row items-center justify-between gap-4">
                   <div className="text-left">
                     <p className="text-xs font-Gudea tracking-[.3em] uppercase text-white/50 mb-1">
-                      En savoir plus ?
+                      Pourquoi nous ?
                     </p>
                     <h3 className="font-semibold text-white text-lg sm:text-2xl tracking-[.1em] uppercase font-Gudea">
-                      Découvrez qui nous sommes
+                      Découvrez nos atouts
                     </h3>
                   </div>
-                  <a
-                    href="/a-propos"
+                  <Link
+                    href="/#atouts"
                     className="shrink-0 inline-flex items-center gap-2 font-Gudea font-semibold text-sm bg-white text-purple2 rounded-md py-2.5 px-5 uppercase tracking-[.2em] hover:bg-white/90 transition-all duration-300 hover:scale-105"
                   >
-                    Notre équipe
+                    Nos atouts
                     <svg className="w-3.5 h-3.5" fill="none" stroke="currentColor" viewBox="0 0 24 24">
                       <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M13 7l5 5m0 0l-5 5m5-5H6" />
                     </svg>
-                  </a>
+                  </Link>
                 </div>
               </div>
             </div>
           </div>
-        </div>
-
-        {/* Flèche pour scroll */}
-        <div className="absolute bottom-8 left-1/2 -translate-x-1/2 animate-bounce">
-          <svg
-            className="w-6 h-6 text-blackGleam/40"
-            fill="none"
-            stroke="currentColor"
-            viewBox="0 0 24 24"
-          >
-            <path
-              strokeLinecap="round"
-              strokeLinejoin="round"
-              strokeWidth={2}
-              d="M19 14l-7 7m0 0l-7-7m7 7V3"
-            />
-          </svg>
         </div>
       </section>
     </>

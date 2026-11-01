@@ -274,7 +274,7 @@ body {
   background-repeat: repeat;
 }
 
-/* Apparition du titre du hero : "Web design" puis "Web développement" */
+/* Apparition du titre du hero, ligne par ligne */
 .hero-reveal {
   opacity: 0;
   animation: heroReveal 0.9s cubic-bezier(0.22, 1, 0.36, 1) forwards;
@@ -299,3 +299,110 @@ body {
     animation: none;
   }
 }
+
+/* Changement d onglet (offres, filtres projets) */
+.tab-fade {
+  animation: tabFade 0.5s cubic-bezier(0.22, 1, 0.36, 1);
+}
+
+@keyframes tabFade {
+  from {
+    opacity: 0;
+    transform: translateY(12px);
+  }
+  to {
+    opacity: 1;
+    transform: translateY(0);
+  }
+}
+
+@media (prefers-reduced-motion: reduce) {
+  .tab-fade {
+    animation: none;
+  }
+}
+
+/* Services : halo qui suit la souris */
+.spotlight:hover {
+  background: radial-gradient(
+    320px circle at var(--x, 50%) var(--y, 50%),
+    rgba(79, 6, 148, 0.55),
+    rgba(229, 231, 235, 0.7) 70%
+  );
+}
+.spotlight-glow {
+  background: radial-gradient(
+    400px circle at var(--x, 50%) var(--y, 50%),
+    rgba(79, 6, 148, 0.07),
+    transparent 60%
+  );
+}
+
+/* Services : tête de lecture de la timeline motion */
+.motion-playhead {
+  animation: playhead 4s linear infinite;
+}
+@keyframes playhead {
+  from { left: 0%; }
+  to { left: 100%; }
+}
+
+/* Services : logo qui se transforme */
+.logo-morph {
+  animation: logoMorph 6s ease-in-out infinite;
+}
+@keyframes logoMorph {
+  0%, 100% { border-radius: 30% 70% 70% 30% / 30% 30% 70% 70%; transform: rotate(0deg); }
+  33% { border-radius: 50%; transform: rotate(120deg); }
+  66% { border-radius: 24%; transform: rotate(240deg); }
+}
+
+/* Services : barres de disponibilité */
+.uptime-bar {
+  transform-origin: bottom;
+  animation: uptime 1.8s ease-in-out infinite alternate;
+}
+@keyframes uptime {
+  from { transform: scaleY(0.55); opacity: 0.6; }
+  to { transform: scaleY(1); opacity: 1; }
+}
+
+@media (prefers-reduced-motion: reduce) {
+  .motion-playhead,
+  .logo-morph,
+  .uptime-bar {
+    animation: none;
+  }
+}
+
+/* Footer : nom de la marque en incrustation (style wordmark très gras) */
+.footer-watermark {
+  color: transparent;
+  /* Noir à peine plus clair que le fond + reflet qui balaie le mot */
+  background-image:
+    linear-gradient(
+      100deg,
+      transparent 40%,
+      rgba(176, 128, 221, 0.18) 50%,
+      transparent 60%
+    ),
+    linear-gradient(180deg, rgba(255, 255, 255, 0.075), rgba(255, 255, 255, 0.03));
+  background-size: 250% 100%, 100% 100%;
+  background-repeat: no-repeat;
+  background-position: 150% 0, 0 0;
+  -webkit-background-clip: text;
+  background-clip: text;
+  animation: watermarkGleam 7s ease-in-out infinite;
+}
+
+@keyframes watermarkGleam {
+  0%, 55% { background-position: 150% 0, 0 0; }
+  100% { background-position: -50% 0, 0 0; }
+}
+
+@media (prefers-reduced-motion: reduce) {
+  .footer-watermark {
+    animation: none;
+  }
+}
+

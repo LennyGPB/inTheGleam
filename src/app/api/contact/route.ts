@@ -1,6 +1,8 @@
 import { NextResponse } from "next/server";
+import { offerLabels } from "@/lib/offers";
 
 const PROJECT_TYPES = [
+  "Motion design / Réseaux sociaux",
   "Site vitrine",
   "Site e-commerce",
   "Application mobile",
@@ -50,6 +52,8 @@ export async function POST(request: Request) {
   const email = field(body.email, 150);
   const phone = field(body.phone, 30);
   const projectType = field(body.projectType, 50);
+  const offerSlug = field(body.offer, 50);
+  const offer = Object.hasOwn(offerLabels, offerSlug) ? offerLabels[offerSlug] : "";
   const message = field(body.message, 3000);
 
   if (!name || !EMAIL_REGEX.test(email) || message.length < 10) {
@@ -68,6 +72,7 @@ export async function POST(request: Request) {
     `✉️ <b>Email :</b> ${escapeHtml(email)}`,
     phone ? `📞 <b>Téléphone :</b> ${escapeHtml(phone)}` : null,
     `🗂 <b>Projet :</b> ${escapeHtml(type)}`,
+    offer ? `💎 <b>Offre :</b> ${escapeHtml(offer)}` : null,
     "",
     `💬 <b>Message :</b>`,
     escapeHtml(message),

@@ -12,16 +12,21 @@ export function proxy(request: NextRequest) {
 
   // Redirection des anciennes URLs si nécessaire
   const redirects: Record<string, string> = {
-    "/about": "/a-propos",
-    "/about-us": "/a-propos",
+    "/about": "/#atouts",
+    "/about-us": "/#atouts",
+    "/a-propos": "/#atouts",
     "/portfolio": "/nos-realisations",
     "/work": "/nos-realisations",
     "/services": "/",
+    "/vitrine": "/projets",
+    "/e-commerce": "/projets",
   };
 
   const pathname = url.pathname;
   if (redirects[pathname]) {
-    url.pathname = redirects[pathname];
+    const [target, hash] = redirects[pathname].split("#");
+    url.pathname = target;
+    url.hash = hash ? `#${hash}` : "";
     return NextResponse.redirect(url, 301); // Redirection permanente
   }
 

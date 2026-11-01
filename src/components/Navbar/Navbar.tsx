@@ -15,12 +15,8 @@ const itemNavbar = [
     link: "/projets",
   },
   {
-    text: "E-Commerce",
-    link: "/e-commerce",
-  },
-  {
-    text: "Vitrine",
-    link: "/vitrine",
+    text: "Offres",
+    link: "/#offres",
   },
   {
     text: "App Mobile",
@@ -28,7 +24,7 @@ const itemNavbar = [
   },
   {
     text: "À Propos",
-    link: "/a-propos",
+    link: "/#atouts",
   },
   {
     text: "Contact",
@@ -132,7 +128,7 @@ export default function Navbar() {
             const active =
               item.link === "/"
                 ? pathname === "/"
-                : pathname.startsWith(item.link);
+                : !item.link.startsWith("/#") && pathname.startsWith(item.link);
             return (
               <div key={item.link}>
                 <Link
