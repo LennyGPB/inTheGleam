@@ -48,14 +48,14 @@ function CardText({
   description: string;
 }) {
   return (
-    <div className="relative p-7 pt-6">
+    <div className="relative p-5 pt-4 sm:p-7 sm:pt-6">
       <span className="font-Gudea text-[11px] font-semibold uppercase tracking-[.25em] text-purple2/70">
         {tag}
       </span>
-      <h3 className="mt-2 font-Gudea text-2xl font-bold text-blackGleam group-hover:text-purple2 transition-colors duration-300">
+      <h3 className="mt-1.5 sm:mt-2 font-Gudea text-xl sm:text-2xl font-bold text-blackGleam group-hover:text-purple2 transition-colors duration-300">
         {title}
       </h3>
-      <p className="mt-3 font-Gudea leading-relaxed text-gray-600">
+      <p className="mt-2 sm:mt-3 font-Gudea text-sm sm:text-base leading-relaxed text-gray-600">
         {description}
       </p>
     </div>
@@ -76,13 +76,18 @@ function Stage({
   return (
     <div
       aria-hidden="true"
-      className={`relative m-3 mb-0 flex h-44 items-center justify-center overflow-hidden rounded-2xl ${
+      className={`relative m-2.5 mb-0 h-32 overflow-hidden rounded-2xl sm:m-3 sm:mb-0 sm:h-44 ${
         dark
           ? "bg-gradient-to-br from-blackGleam via-[#1a0a2b] to-[#2a0a4a]"
           : "bg-gradient-to-br from-purple2/[0.06] via-white to-purple3/[0.08] border border-purple2/10"
-      } ${className}`}
+      }`}
     >
-      {children}
+      {/* Contenu réduit sur mobile pour tenir dans les petites cartes */}
+      <div
+        className={`relative flex h-full w-full origin-center scale-[0.78] items-center justify-center sm:scale-100 ${className}`}
+      >
+        {children}
+      </div>
     </div>
   );
 }
@@ -467,7 +472,7 @@ export default function ServicesBento() {
               {services.map((service) => (
                 <li
                   key={service.title}
-                  className="w-[290px] shrink-0 sm:w-[340px]"
+                  className="w-[240px] shrink-0 sm:w-[340px]"
                 >
                   <ServiceCard service={service} />
                 </li>
@@ -477,7 +482,7 @@ export default function ServicesBento() {
         </div>
       </div>
 
-      <div className="mt-6 flex items-center justify-center gap-3">
+      <div className="mt-6 hidden items-center justify-center gap-3 sm:flex">
         <ArrowButton direction="prev" onClick={() => slide(-1)} />
         <ArrowButton direction="next" onClick={() => slide(1)} />
       </div>
